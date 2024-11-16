@@ -1,1 +1,406 @@
-/* You can add global styles to this file, and also import other style files */
+h1 {
+  text-align: center;
+}
+
+.demo {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+  position: relative;
+
+  h2,
+  h3 {
+    text-align: center;
+  }
+}
+
+/*Simple container, no borders anywhere.*/
+.demo1-container {
+  /*Center it.*/
+  width: 50vw;
+  margin: 0 auto;
+  /*Sizes include padding and border*/
+  box-sizing: border-box;
+  /*So that the navigation can position itself absolute and be inside the demo container.*/
+  position: relative;
+
+  demo-carousel-previous-button,
+  demo-carousel-next-button {
+    /*Buttons on top of the slides*/
+    z-index: 1;
+  }
+  /*Isolate z-index of buttons within this container only.*/
+  isolation: isolate;
+}
+
+/*With autorotation. Container has a border and padding for the prev/next/rotation buttons, and slides have a border.*/
+.demo2-container {
+  --container-width: 480px;
+  --container-border-width: 10px;
+  --previous-next-button-width: 80px;
+  --rotation-button-height: 50px;
+  /*Center it.*/
+  width: var(--container-width);
+  margin: 0 auto;
+  /*Sizes include padding and border*/
+  box-sizing: border-box;
+  border: 10px solid blue;
+  padding: var(--rotation-button-height) var(--previous-next-button-width);
+  /*So that the navigation can position itself absolute and be inside the demo container.*/
+  position: relative;
+
+  /*Intellij does not recognize :state() yet.*/
+  /*noinspection CssInvalidPseudoSelector*/
+  &:has(demo-carousel-autorotation-button:state(stopped)) {
+    border: 10px solid red;
+  }
+
+  demo-carousel-slide {
+    box-sizing: border-box;
+    border: 10px solid cyan;
+  }
+
+  /*Position buttons in the padding area.*/
+  demo-carousel-previous-button,
+  demo-carousel-next-button {
+    width: var(--previous-next-button-width);
+    background-color: darkgray;
+  }
+
+  demo-carousel-autorotation-button {
+    width: calc(var(--container-width) - ((var(--previous-next-button-width) + var(--container-border-width)) * 2));
+    height: var(--rotation-button-height);
+    text-align: center;
+    background-color: black;
+
+    &:nth-of-type(2) {
+      top: auto;
+      bottom: 0;
+    }
+  }
+}
+
+/*With picker navigation. Container has padding for the picker, the progress overlays the slides.*/
+.demo3-container {
+  --container-width: 480px;
+  --container-border-width: 10px;
+  --picker-height: 50px;
+  /*Center it.*/
+  width: var(--container-width);
+  margin: 0 auto;
+  /*Sizes include padding and border*/
+  box-sizing: border-box;
+  border: 10px solid blue;
+  padding: 0 0 var(--picker-height);
+  /*So that the navigation can position itself absolute and be inside the demo container.*/
+  position: relative;
+
+  demo-carousel-slide {
+    box-sizing: border-box;
+    border: 10px solid cyan;
+  }
+
+  demo-carousel-picker {
+    box-sizing: border-box;
+    width: calc(var(--container-width) - var(--container-border-width) * 2);
+    height: var(--picker-height);
+    display: flex;
+    justify-content: space-evenly;
+    padding: 10px;
+
+    demo-carousel-picker-button {
+      width: 30px;
+      background-color: dimgray;
+      border-radius: 50%;
+      transition: background-color 0.5s ease-in-out;
+
+      /*noinspection CssInvalidPseudoSelector*/
+      &:state(closest) {
+        background-color: greenyellow;
+        transition: background-color 0.2s ease-in-out;
+      }
+    }
+  }
+
+  demo-carousel-progress {
+    width: calc(var(--container-width) - var(--container-border-width) * 2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0 8px;
+    top: auto;
+    bottom: calc(var(--picker-height) + 15px);
+    font-size: 10px;
+
+    demo-carousel-progress-item {
+      --transition-effect: 0.5s ease-in-out;
+      width: 16px;
+      height: 16px;
+      background-color: dimgray;
+      transition: background-color var(--transition-effect);
+      /*To center text horizontally and vertically inside the progress item.*/
+      text-align: center;
+      line-height: 16px;
+
+      /*noinspection CssInvalidPseudoSelector*/
+      &:state(closest) {
+        --transition-effect: 0.2s ease-in-out;
+        background-color: red;
+        transition: background-color var(--transition-effect);
+      }
+    }
+  }
+}
+
+/*With tabbed navigation. Container has padding for the tabs, the progress overlays the slides.*/
+.demo4-container {
+  --container-width: 480px;
+  --container-border-width: 10px;
+  --picker-height: 30px;
+  /*Center it.*/
+  width: var(--container-width);
+  margin: 0 auto;
+  /*Sizes include padding and border*/
+  box-sizing: border-box;
+  border: 10px solid blue;
+  padding: var(--picker-height) 0 0;
+  /*So that the navigation can position itself absolute and be inside the demo container.*/
+  position: relative;
+
+  demo-carousel-slide {
+    box-sizing: border-box;
+    border: 10px solid greenyellow;
+  }
+
+  demo-carousel-tab-list {
+    box-sizing: border-box;
+    width: calc(var(--container-width) - var(--container-border-width) * 2);
+    height: var(--picker-height);
+    display: flex;
+
+    demo-carousel-tab {
+      background-color: lightgray;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex: 1 1 100%;
+      border-top-left-radius: 8px;
+      border-top-right-radius: 8px;
+      border: 1px solid black;
+      transition: background-color 0.5s ease-in-out;
+
+      /*noinspection CssInvalidPseudoSelector*/
+      &:state(closest) {
+        background-color: greenyellow;
+        border-bottom-width: 0;
+        transition: background-color 0.2s ease-in-out;
+      }
+    }
+  }
+
+  demo-carousel-progress {
+    width: calc(var(--container-width) - var(--container-border-width) * 2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0 8px;
+    top: auto;
+    bottom: 15px;
+
+    demo-carousel-progress-item {
+      --transition-effect: 0.5s ease-in-out;
+      width: 10px;
+      height: 10px;
+      background-color: dimgray;
+      transition: background-color var(--transition-effect);
+
+      /*noinspection CssInvalidPseudoSelector*/
+      &:state(closest) {
+        --transition-effect: 0.2s ease-in-out;
+        background-color: red;
+        transition: background-color var(--transition-effect);
+      }
+    }
+  }
+}
+
+/*Don't use slots for controls.*/
+.demo5-container {
+  --container-width: 480px;
+  --container-border-width: 10px;
+  --previous-next-button-width: 80px;
+  --rotation-button-height: 50px;
+  /*Center it.*/
+  width: var(--container-width);
+  margin: 0 auto;
+  /*Sizes include padding and border*/
+  box-sizing: border-box;
+  border: 10px solid blue;
+  /*So that the navigation can position itself absolute and be inside the demo container.*/
+  position: relative;
+
+  /*Intellij does not recognize :state() yet.*/
+  /*noinspection CssInvalidPseudoSelector*/
+  &:has(demo-carousel-autorotation-button:state(stopped)) {
+    border: 10px solid red;
+  }
+
+  demo-carousel-slide {
+    box-sizing: border-box;
+    border: 10px solid cyan;
+  }
+
+  div.controls {
+    isolation: isolate;
+    z-index: 1;
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    display: flex;
+    gap: 8px;
+
+    demo-carousel-autorotation-button,
+    demo-carousel-previous-button,
+    demo-carousel-next-button {
+      box-sizing: border-box;
+      cursor: pointer;
+
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+
+      background-color: dimgray;
+      color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 3px 5px black;
+
+      padding: 0.25em 0.75em;
+      min-width: 15ch;
+      min-height: 44px;
+
+      text-align: center;
+      line-height: 1.1;
+
+      /*noinspection CssInvalidPseudoSelector*/
+      &:state(playing) {
+        background-color: forestgreen;
+      }
+      /*noinspection CssInvalidPseudoSelector*/
+      &:state(pausing) {
+        background-color: midnightblue;
+      }
+      /*noinspection CssInvalidPseudoSelector*/
+      &:state(stopped),
+      &:state(starting) {
+        background-color: firebrick;
+      }
+
+      &:hover,
+      &:active {
+        background-color: darkred;
+      }
+
+      &:focus {
+        background-color: #222222;
+        outline: 2px solid black;
+
+        /*noinspection CssInvalidPseudoSelector*/
+        &:state(stopped),
+        &:state(starting) {
+          background-color: #600000;
+        }
+      }
+    }
+  }
+}
+
+demo-carousel-slide {
+  height: 0;
+  padding-bottom: 75%;
+  /* Color names from: https://colornamer.robertcooper.me/, default color names */
+  background-color: #ff9999; /* rubber radish */
+
+  &:nth-of-type(2) {
+    background-color: #ffc799; /* peachy breezes */
+  }
+  &:nth-of-type(3) {
+    background-color: #7acc7a; /* electric lettuce */
+  }
+  &:nth-of-type(4) {
+    background-color: #5c9999; /* caulerpa lentillifera */
+  }
+  &:nth-of-type(5) {
+    background-color: #ffdfdf; /* red remains */
+  }
+  &:nth-of-type(6) {
+    background-color: #b23535; /* red contrast */
+  }
+}
+
+demo-carousel-tab,
+demo-carousel-picker-button,
+demo-carousel-button,
+demo-carousel-autorotation-button,
+demo-carousel-previous-button,
+demo-carousel-next-button {
+  cursor: pointer;
+}
+
+/*noinspection CssInvalidPseudoSelector*/
+demo-carousel-container:state(first) demo-carousel-previous-button,
+demo-carousel-container:state(last) demo-carousel-next-button {
+  /*This only stops pointer interaction, keyboard still is working.*/
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+demo-carousel-previous-button > p,
+demo-carousel-next-button > p {
+  padding-top: 50px;
+}
+
+/*noinspection CssInvalidPseudoSelector*/
+demo-carousel-button:state(current) {
+  color: red;
+}
+
+demo-carousel-autorotation-button {
+  div.playing,
+  div.pausing,
+  div.stopped,
+  div.starting {
+    display: none;
+  }
+
+  /*noinspection CssInvalidPseudoSelector*/
+  &:state(playing) {
+    color: lightgreen;
+    div.playing {
+      display: block;
+    }
+  }
+
+  /*noinspection CssInvalidPseudoSelector*/
+  &:state(pausing) {
+    color: deepskyblue;
+    div.pausing {
+      display: block;
+    }
+  }
+
+  /*noinspection CssInvalidPseudoSelector*/
+  &:state(starting) {
+    color: orange;
+    div.starting {
+      display: block;
+    }
+  }
+
+  /*noinspection CssInvalidPseudoSelector*/
+  &:state(stopped) {
+    color: red;
+    div.stopped {
+      display: block;
+    }
+  }
+}

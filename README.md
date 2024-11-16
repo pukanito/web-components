@@ -16,3 +16,11 @@
   - Would you like remote caching to make your build faster? · skip
 - run `npm install @ngneat/spectator --save-dev`
 - run `npm install --save-dev @testing-library/dom`
+
+## Carousel library
+
+- run `npx nx g @nx/js:lib libs/carousel --publishable --importPath=@pukanito/carousel` from the 'web-components' directory to add a library. Settings used:
+  - Which bundler would you like to use to build the library? Choose 'none' to skip build setup. · vite
+  - Which linter would you like to use? · eslint
+  - Which unit test runner would you like to use? · jest
+
