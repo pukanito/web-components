@@ -1,7 +1,28 @@
 {
   "name": "@pukanito/carousel",
-  "version": "0.0.1",
-  "dependencies": {},
+  "version": "1.0.0",
+  "license": "MIT",
+  "description": "Accessible carousel web component",
+  "keywords": [
+    "Web component",
+    "HTML",
+    "carousel",
+    "shadow DOM",
+    "accessibility"
+  ],
+  "homepage": "https://github.com/pukanito/web-components/tree/master/libs/carousel",
+  "bugs": "https://github.com/pukanito/web-components/issues",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pukanito/web-components.git"
+  },
+  "author": {
+    "name": "Pukanito Forager",
+    "email": "pukanito@gmail.com"
+  },
+  "dependencies": {
+    "tslib": "^2.3.0"
+  },
   "main": "./index.js",
   "module": "./index.mjs",
   "typings": "./index.d.ts"

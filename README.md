@@ -24,6 +24,18 @@
   - Which linter would you like to use? · eslint
   - Which unit test runner would you like to use? · jest
 
+Access the carousel code at: https://github.com/pukanito/web-components/tree/master/libs/carousel
+
+## Demo
+
+- Assume 'nvm' or a correct node version is installed (node version in .nvmrc)
+- clone this repository
+- run `nvm use` (if you have 'nvm' installed)
+- run `npm ci`
+- run `npx nx run demo:serve`
+- browse 'http://localhost:4200'
+- to stop the demo press ctrl-c.
+
 # NX - WebComponents
 
 <a alt="Nx logo" href="https://nx.dev" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png" width="45"></a>
