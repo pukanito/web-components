@@ -17,7 +17,7 @@ declare global {
  * The user has to set these themselves on the custom attributes where necessary.
  */
 // TODO: Temporary dataPrefix so that it compiles.
-export const dataPrefix = '';
+const dataPrefix = '';
 // Counter for creating unique ID's of slides.
 let idCounter = 0;
 
