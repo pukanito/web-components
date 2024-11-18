@@ -24,8 +24,8 @@ h1 {
   /*So that the navigation can position itself absolute and be inside the demo container.*/
   position: relative;
 
-  demo-carousel-previous-button,
-  demo-carousel-next-button {
+  carousel-previous-button,
+  carousel-next-button {
     /*Buttons on top of the slides*/
     z-index: 1;
   }
@@ -51,23 +51,23 @@ h1 {
 
   /*Intellij does not recognize :state() yet.*/
   /*noinspection CssInvalidPseudoSelector*/
-  &:has(demo-carousel-autorotation-button:state(stopped)) {
+  &:has(carousel-autorotation-button:state(stopped)) {
     border: 10px solid red;
   }
 
-  demo-carousel-slide {
+  carousel-slide {
     box-sizing: border-box;
     border: 10px solid cyan;
   }
 
   /*Position buttons in the padding area.*/
-  demo-carousel-previous-button,
-  demo-carousel-next-button {
+  carousel-previous-button,
+  carousel-next-button {
     width: var(--previous-next-button-width);
     background-color: darkgray;
   }
 
-  demo-carousel-autorotation-button {
+  carousel-autorotation-button {
     width: calc(var(--container-width) - ((var(--previous-next-button-width) + var(--container-border-width)) * 2));
     height: var(--rotation-button-height);
     text-align: center;
@@ -95,12 +95,12 @@ h1 {
   /*So that the navigation can position itself absolute and be inside the demo container.*/
   position: relative;
 
-  demo-carousel-slide {
+  carousel-slide {
     box-sizing: border-box;
     border: 10px solid cyan;
   }
 
-  demo-carousel-picker {
+  carousel-picker {
     box-sizing: border-box;
     width: calc(var(--container-width) - var(--container-border-width) * 2);
     height: var(--picker-height);
@@ -108,7 +108,7 @@ h1 {
     justify-content: space-evenly;
     padding: 10px;
 
-    demo-carousel-picker-button {
+    carousel-picker-button {
       width: 30px;
       background-color: dimgray;
       border-radius: 50%;
@@ -122,7 +122,7 @@ h1 {
     }
   }
 
-  demo-carousel-progress {
+  carousel-progress {
     width: calc(var(--container-width) - var(--container-border-width) * 2);
     display: flex;
     justify-content: center;
@@ -132,7 +132,7 @@ h1 {
     bottom: calc(var(--picker-height) + 15px);
     font-size: 10px;
 
-    demo-carousel-progress-item {
+    carousel-progress-item {
       --transition-effect: 0.5s ease-in-out;
       width: 16px;
       height: 16px;
@@ -167,18 +167,18 @@ h1 {
   /*So that the navigation can position itself absolute and be inside the demo container.*/
   position: relative;
 
-  demo-carousel-slide {
+  carousel-slide {
     box-sizing: border-box;
     border: 10px solid greenyellow;
   }
 
-  demo-carousel-tab-list {
+  carousel-tab-list {
     box-sizing: border-box;
     width: calc(var(--container-width) - var(--container-border-width) * 2);
     height: var(--picker-height);
     display: flex;
 
-    demo-carousel-tab {
+    carousel-tab {
       background-color: lightgray;
       display: flex;
       align-items: center;
@@ -198,7 +198,7 @@ h1 {
     }
   }
 
-  demo-carousel-progress {
+  carousel-progress {
     width: calc(var(--container-width) - var(--container-border-width) * 2);
     display: flex;
     justify-content: center;
@@ -207,7 +207,7 @@ h1 {
     top: auto;
     bottom: 15px;
 
-    demo-carousel-progress-item {
+    carousel-progress-item {
       --transition-effect: 0.5s ease-in-out;
       width: 10px;
       height: 10px;
@@ -241,11 +241,11 @@ h1 {
 
   /*Intellij does not recognize :state() yet.*/
   /*noinspection CssInvalidPseudoSelector*/
-  &:has(demo-carousel-autorotation-button:state(stopped)) {
+  &:has(carousel-autorotation-button:state(stopped)) {
     border: 10px solid red;
   }
 
-  demo-carousel-slide {
+  carousel-slide {
     box-sizing: border-box;
     border: 10px solid cyan;
   }
@@ -259,9 +259,9 @@ h1 {
     display: flex;
     gap: 8px;
 
-    demo-carousel-autorotation-button,
-    demo-carousel-previous-button,
-    demo-carousel-next-button {
+    carousel-autorotation-button,
+    carousel-previous-button,
+    carousel-next-button {
       box-sizing: border-box;
       cursor: pointer;
 
@@ -314,7 +314,7 @@ h1 {
   }
 }
 
-demo-carousel-slide {
+carousel-slide {
   height: 0;
   padding-bottom: 75%;
   /* Color names from: https://colornamer.robertcooper.me/, default color names */
@@ -337,34 +337,34 @@ demo-carousel-slide {
   }
 }
 
-demo-carousel-tab,
-demo-carousel-picker-button,
-demo-carousel-button,
-demo-carousel-autorotation-button,
-demo-carousel-previous-button,
-demo-carousel-next-button {
+carousel-tab,
+carousel-picker-button,
+carousel-button,
+carousel-autorotation-button,
+carousel-previous-button,
+carousel-next-button {
   cursor: pointer;
 }
 
 /*noinspection CssInvalidPseudoSelector*/
-demo-carousel-container:state(first) demo-carousel-previous-button,
-demo-carousel-container:state(last) demo-carousel-next-button {
+carousel-container:state(first) carousel-previous-button,
+carousel-container:state(last) carousel-next-button {
   /*This only stops pointer interaction, keyboard still is working.*/
   cursor: not-allowed;
   pointer-events: none;
 }
 
-demo-carousel-previous-button > p,
-demo-carousel-next-button > p {
+carousel-previous-button > p,
+carousel-next-button > p {
   padding-top: 50px;
 }
 
 /*noinspection CssInvalidPseudoSelector*/
-demo-carousel-button:state(current) {
+carousel-button:state(current) {
   color: red;
 }
 
-demo-carousel-autorotation-button {
+carousel-autorotation-button {
   div.playing,
   div.pausing,
   div.stopped,

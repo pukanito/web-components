@@ -15,40 +15,23 @@
       <div>
         <h2 id="carousel1-label">Simple (responsive)</h2>
         <div class="demo1-container">
-          <demo-carousel-container aria-labelledby="carousel1-label">
-            <demo-carousel-previous-button
-              ><p>Go to previous slide</p></demo-carousel-previous-button
-            >
-            <demo-carousel-next-button
-              ><p>Go to next slide</p></demo-carousel-next-button
-            >
-            <demo-carousel-slide aria-label="1 of 4"
-              ><h3>Rubber radish</h3></demo-carousel-slide
-            >
-            <demo-carousel-slide aria-label="2 of 4"
-              ><h3>Peachy breezes</h3></demo-carousel-slide
-            >
-            <demo-carousel-slide aria-label="3 of 4"
-              ><h3>Electric lettuce</h3></demo-carousel-slide
-            >
-            <demo-carousel-slide aria-label="4 of 4"
-              ><h3>Caulerpa lentillifera</h3></demo-carousel-slide
-            >
-          </demo-carousel-container>
+          <carousel-container aria-labelledby="carousel1-label">
+            <carousel-previous-button accesskey="p"><p>Go to previous slide</p></carousel-previous-button>
+            <carousel-next-button accesskey="n"><p>Go to next slide</p></carousel-next-button>
+            <carousel-slide aria-label="1 of 4"><h3>Rubber radish</h3></carousel-slide>
+            <carousel-slide aria-label="2 of 4"><h3>Peachy breezes</h3></carousel-slide>
+            <carousel-slide aria-label="3 of 4"><h3>Electric lettuce</h3></carousel-slide>
+            <carousel-slide aria-label="4 of 4"><h3>Caulerpa lentillifera</h3></carousel-slide>
+          </carousel-container>
         </div>
       </div>
       <div>
         <h2 id="carousel2-label">Autorotation</h2>
         <div class="demo2-container">
-          <demo-carousel-container
-            role="region"
-            aria-labelledby="carousel2-label"
-          >
-            <demo-carousel-previous-button
-              ><p>Go to previous slide</p></demo-carousel-previous-button
-            >
+          <carousel-container role="region" aria-labelledby="carousel2-label">
+            <carousel-previous-button><p>Go to previous slide</p></carousel-previous-button>
             <!-- accessible label provided by the inner text of the autorotation button -->
-            <demo-carousel-autorotation-button>
+            <carousel-autorotation-button>
               <div class="playing">
                 <p><strong>Stop slide rotation</strong></p>
               </div>
@@ -61,8 +44,8 @@
               <div class="starting">
                 <p><strong>Starting...</strong></p>
               </div>
-            </demo-carousel-autorotation-button>
-            <demo-carousel-autorotation-button>
+            </carousel-autorotation-button>
+            <carousel-autorotation-button>
               <div class="playing">
                 <p><strong>Stop slide rotation 2</strong></p>
               </div>
@@ -75,230 +58,136 @@
               <div class="starting">
                 <p><strong>Starting... 2</strong></p>
               </div>
-            </demo-carousel-autorotation-button>
-            <demo-carousel-next-button
-              ><p>Go to next slide</p></demo-carousel-next-button
-            >
-            <demo-carousel-slide aria-labelledby="h3-1-2"
-              ><h3 id="h3-1-2">Rubber radish</h3></demo-carousel-slide
-            >
-            <demo-carousel-slide aria-labelledby="h3-2-2"
-              ><h3 id="h3-2-2">Peachy breezes</h3></demo-carousel-slide
-            >
-            <demo-carousel-slide aria-labelledby="h3-3-2"
-              ><h3 id="h3-3-2">Electric lettuce</h3></demo-carousel-slide
-            >
-            <demo-carousel-slide aria-labelledby="h3-4-2"
-              ><h3 id="h3-4-2">Caulerpa lentillifera</h3></demo-carousel-slide
-            >
-          </demo-carousel-container>
+            </carousel-autorotation-button>
+            <carousel-next-button><p>Go to next slide</p></carousel-next-button>
+            <carousel-slide aria-labelledby="h3-1-2"><h3 id="h3-1-2">Rubber radish</h3></carousel-slide>
+            <carousel-slide aria-labelledby="h3-2-2"><h3 id="h3-2-2">Peachy breezes</h3></carousel-slide>
+            <carousel-slide aria-labelledby="h3-3-2"><h3 id="h3-3-2">Electric lettuce</h3></carousel-slide>
+            <carousel-slide aria-labelledby="h3-4-2"><h3 id="h3-4-2">Caulerpa lentillifera</h3></carousel-slide>
+          </carousel-container>
         </div>
       </div>
       <div>
         <h2 id="carousel3-label">Progress and slide picker</h2>
         <div class="demo3-container">
-          <demo-carousel-container aria-labelledby="carousel3-label">
-            <demo-carousel-progress>
-              <demo-carousel-progress-item slide="1"
-                >1</demo-carousel-progress-item
-              >
-              <demo-carousel-progress-item slide="2"
-                >2</demo-carousel-progress-item
-              >
-              <demo-carousel-progress-item slide="3"
-                >3</demo-carousel-progress-item
-              >
-              <demo-carousel-progress-item slide="4"
-                >4</demo-carousel-progress-item
-              >
-              <demo-carousel-progress-item slide="5"
-                >5</demo-carousel-progress-item
-              >
-              <demo-carousel-progress-item slide="6"
-                >6</demo-carousel-progress-item
-              >
-            </demo-carousel-progress>
-            <demo-carousel-picker aria-label="Choose slide to display">
-              <demo-carousel-picker-button
-                slide="1"
-                aria-label="Rubber radish"
-              ></demo-carousel-picker-button>
-              <demo-carousel-picker-button
-                slide="2"
-                aria-label="Peachy breezes"
-              ></demo-carousel-picker-button>
-              <demo-carousel-picker-button
-                slide="3"
-                aria-label="Electric lettuce"
-              ></demo-carousel-picker-button>
-              <demo-carousel-picker-button
-                slide="4"
-                aria-label="Caulerpa lentillifera"
-              ></demo-carousel-picker-button>
-              <demo-carousel-picker-button
-                slide="5"
-                aria-label="Red remains"
-              ></demo-carousel-picker-button>
-              <demo-carousel-picker-button
-                slide="6"
-                aria-label="Red contrast"
-              ></demo-carousel-picker-button>
-            </demo-carousel-picker>
-            <demo-carousel-slide aria-labelledby="h3-1-3"
-              ><h3 id="h3-1-3">Rubber radish</h3></demo-carousel-slide
-            >
-            <demo-carousel-slide aria-labelledby="h3-2-3"
-              ><h3 id="h3-2-3">Peachy breezes</h3></demo-carousel-slide
-            >
-            <demo-carousel-slide aria-labelledby="h3-3-3"
-              ><h3 id="h3-3-3">Electric lettuce</h3></demo-carousel-slide
-            >
-            <demo-carousel-slide aria-labelledby="h3-4-3"
-              ><h3 id="h3-4-3">Caulerpa lentillifera</h3></demo-carousel-slide
-            >
-            <demo-carousel-slide aria-labelledby="h3-5-3"
-              ><h3 id="h3-5-3">Red remains</h3></demo-carousel-slide
-            >
-            <demo-carousel-slide aria-labelledby="h3-6-3"
-              ><h3 id="h3-6-3">Red contrast</h3></demo-carousel-slide
-            >
-          </demo-carousel-container>
+          <carousel-container aria-labelledby="carousel3-label">
+            <carousel-progress>
+              <carousel-progress-item slide="1">1</carousel-progress-item>
+              <carousel-progress-item slide="2">2</carousel-progress-item>
+              <carousel-progress-item slide="3">3</carousel-progress-item>
+              <carousel-progress-item slide="4">4</carousel-progress-item>
+              <carousel-progress-item slide="5">5</carousel-progress-item>
+              <carousel-progress-item slide="6">6</carousel-progress-item>
+            </carousel-progress>
+            <carousel-picker aria-label="Choose slide to display">
+              <carousel-picker-button slide="1" aria-label="Rubber radish"></carousel-picker-button>
+              <carousel-picker-button slide="2" aria-label="Peachy breezes"></carousel-picker-button>
+              <carousel-picker-button slide="3" aria-label="Electric lettuce"></carousel-picker-button>
+              <carousel-picker-button slide="4" aria-label="Caulerpa lentillifera"></carousel-picker-button>
+              <carousel-picker-button slide="5" aria-label="Red remains"></carousel-picker-button>
+              <carousel-picker-button slide="6" aria-label="Red contrast"></carousel-picker-button>
+            </carousel-picker>
+            <carousel-slide aria-labelledby="h3-1-3"><h3 id="h3-1-3">Rubber radish</h3></carousel-slide>
+            <carousel-slide aria-labelledby="h3-2-3"><h3 id="h3-2-3">Peachy breezes</h3></carousel-slide>
+            <carousel-slide aria-labelledby="h3-3-3"><h3 id="h3-3-3">Electric lettuce</h3></carousel-slide>
+            <carousel-slide aria-labelledby="h3-4-3"><h3 id="h3-4-3">Caulerpa lentillifera</h3></carousel-slide>
+            <carousel-slide aria-labelledby="h3-5-3"><h3 id="h3-5-3">Red remains</h3></carousel-slide>
+            <carousel-slide aria-labelledby="h3-6-3"><h3 id="h3-6-3">Red contrast</h3></carousel-slide>
+          </carousel-container>
         </div>
       </div>
       <div>
         <h2 id="carousel4-label">Tabbed with progress and start at slide #3</h2>
         <div class="demo4-container">
-          <demo-carousel-container aria-labelledby="carousel4-label">
-            <demo-carousel-progress>
-              <demo-carousel-progress-item
-                slide="1"
-              ></demo-carousel-progress-item>
-              <demo-carousel-progress-item
-                slide="2"
-              ></demo-carousel-progress-item>
-              <demo-carousel-progress-item
-                slide="3"
-              ></demo-carousel-progress-item>
-              <demo-carousel-progress-item
-                slide="4"
-              ></demo-carousel-progress-item>
-            </demo-carousel-progress>
-            <demo-carousel-tab-list
-              slot="before-viewport"
-              aria-label="Choose slide to display"
-            >
-              <demo-carousel-tab slide="1" aria-label="Rubber radish"
-                >Slide 1</demo-carousel-tab
-              >
-              <demo-carousel-tab slide="2" aria-label="Peachy breezes"
-                >Slide 2</demo-carousel-tab
-              >
-              <demo-carousel-tab slide="3" aria-label="Electric lettuce"
-                >Slide 3</demo-carousel-tab
-              >
-              <demo-carousel-tab slide="4" aria-label="Caulerpa lentillifera"
-                >Slide 4</demo-carousel-tab
-              >
-            </demo-carousel-tab-list>
-            <demo-carousel-slide id="slide1" aria-labelledby="h3-1-4">
+          <carousel-container aria-labelledby="carousel4-label">
+            <carousel-progress>
+              <carousel-progress-item slide="1"></carousel-progress-item>
+              <carousel-progress-item slide="2"></carousel-progress-item>
+              <carousel-progress-item slide="3"></carousel-progress-item>
+              <carousel-progress-item slide="4"></carousel-progress-item>
+            </carousel-progress>
+            <carousel-tab-list slot="before-viewport" aria-label="Choose slide to display">
+              <carousel-tab slide="1" aria-label="Rubber radish">Slide 1</carousel-tab>
+              <carousel-tab slide="2" aria-label="Peachy breezes">Slide 2</carousel-tab>
+              <carousel-tab slide="3" aria-label="Electric lettuce">Slide 3</carousel-tab>
+              <carousel-tab slide="4" aria-label="Caulerpa lentillifera">Slide 4</carousel-tab>
+            </carousel-tab-list>
+            <carousel-slide id="slide1" aria-labelledby="h3-1-4">
               <h3 id="h3-1-4">Rubber radish</h3>
-              <demo-carousel-button slide="4" slide-autofocus
-                >Go to last slide</demo-carousel-button
-              >
-              <demo-carousel-button slide="2"
-                >Go to next slide</demo-carousel-button
-              >
-            </demo-carousel-slide>
-            <demo-carousel-slide aria-labelledby="h3-2-4">
+              <carousel-button slide="4" slide-autofocus>Go to last slide</carousel-button>
+              <carousel-button slide="2">Go to next slide</carousel-button>
+            </carousel-slide>
+            <carousel-slide aria-labelledby="h3-2-4">
               <h3 id="h3-2-4">Peachy breezes</h3>
-              <demo-carousel-button slide="1" slide-autofocus
-                >Go to previous slide</demo-carousel-button
-              >
-              <demo-carousel-button slide="3"
-                >Go to next slide</demo-carousel-button
-              >
-            </demo-carousel-slide>
-            <demo-carousel-slide aria-labelledby="h3-3-4">
+              <carousel-button slide="1" slide-autofocus>Go to previous slide</carousel-button>
+              <carousel-button slide="3">Go to next slide</carousel-button>
+            </carousel-slide>
+            <carousel-slide aria-labelledby="h3-3-4">
               <h3 id="h3-3-4">Electric lettuce</h3>
-              <demo-carousel-button slide="2" slide-autofocus
-                >Go to previous slide</demo-carousel-button
-              >
-              <demo-carousel-button slide="4"
-                >Go to next slide</demo-carousel-button
-              >
-            </demo-carousel-slide>
-            <demo-carousel-slide aria-labelledby="h3-4-4">
+              <carousel-button slide="2" slide-autofocus>Go to previous slide</carousel-button>
+              <carousel-button slide="4">Go to next slide</carousel-button>
+            </carousel-slide>
+            <carousel-slide aria-labelledby="h3-4-4">
               <h3 id="h3-4-4">Caulerpa lentillifera</h3>
-              <demo-carousel-button slide="3" slide-autofocus
-                >Go to previous slide</demo-carousel-button
-              >
-              <demo-carousel-button slide="1"
-                >Go to first slide</demo-carousel-button
-              >
-            </demo-carousel-slide>
-          </demo-carousel-container>
+              <carousel-button slide="3" slide-autofocus>Go to previous slide</carousel-button>
+              <carousel-button slide="1">Go to first slide</carousel-button>
+            </carousel-slide>
+          </carousel-container>
         </div>
       </div>
       <div>
         <h2 id="carousel5-label">
-          Don't use auto slots, shorter delay, and instant scroll
+          Don't use auto slots, shorter delay, instant scroll, and autorotation initially off
         </h2>
         <div class="demo5-container">
-          <demo-carousel-container
-            aria-labelledby="carousel5-label"
-            slide-delay="1000"
-            slide-scroll-behavior="instant"
-          >
+          <carousel-container aria-labelledby="carousel5-label" slide-delay="1000" slide-scroll-behavior="instant">
             <div class="controls" slot="after-viewport">
-              <demo-carousel-previous-button
-                >Previous</demo-carousel-previous-button
-              >
+              <carousel-previous-button>Previous</carousel-previous-button>
               <!-- accessible label provided by the inner text of the autorotation button -->
-              <demo-carousel-autorotation-button>
+              <carousel-autorotation-button>
                 <div class="playing">Stop</div>
                 <div class="pausing">Paused...</div>
                 <div class="stopped">Play</div>
                 <div class="starting">Starting...</div>
-              </demo-carousel-autorotation-button>
-              <demo-carousel-next-button>Next</demo-carousel-next-button>
+              </carousel-autorotation-button>
+              <carousel-next-button>Next</carousel-next-button>
             </div>
-            <demo-carousel-slide aria-labelledby="h3-1-5"
-              ><h3 id="h3-1-5">Rubber radish</h3></demo-carousel-slide
-            >
-            <demo-carousel-slide aria-labelledby="h3-2-5"
-              ><h3 id="h3-2-5">Peachy breezes</h3></demo-carousel-slide
-            >
-            <demo-carousel-slide aria-labelledby="h3-3-5"
-              ><h3 id="h3-3-5">Electric lettuce</h3></demo-carousel-slide
-            >
-            <demo-carousel-slide aria-labelledby="h3-4-5"
+            <carousel-slide aria-labelledby="h3-1-5"><h3 id="h3-1-5">Rubber radish</h3></carousel-slide>
+            <carousel-slide aria-labelledby="h3-2-5"><h3 id="h3-2-5">Peachy breezes</h3></carousel-slide>
+            <carousel-slide aria-labelledby="h3-3-5"><h3 id="h3-3-5">Electric lettuce</h3></carousel-slide>
+            <carousel-slide aria-labelledby="h3-4-5"
               ><h3 id="h3-4-5">Caulerpa lentillifera</h3>
-              <button>
-                Hello, focus of me is before the controls
-              </button></demo-carousel-slide
+              <button>Hello, focus of me is before the controls</button></carousel-slide
             >
-          </demo-carousel-container>
+          </carousel-container>
         </div>
       </div>
     </div>
     <script>
-      // const carouselContainer = document.querySelector('.demo4-container demo-carousel-container');
-      // carouselContainer.addEventListener('slide.carousel', (event) => {
-      //   console.log(event);
-      // });
-      // carouselContainer.addEventListener('slid.carousel', (event) => {
-      //   console.log(event, carouselContainer.carouselState);
-      // });
-      // console.log(carouselContainer.scrollToSlide);
+      const carouselContainer = document.querySelector('.demo4-container carousel-container');
+      carouselContainer.addEventListener('slide.carousel', (event) => {
+        console.log(event);
+      });
+      carouselContainer.addEventListener('slid.carousel', (event) => {
+        console.log(event);
+      });
+      carouselContainer.addEventListener('init.carousel', (event) => {
+        console.log(event);
+      });
+      carouselContainer.addEventListener('closest.carousel', (event) => {
+        console.log(event);
+      });
     </script>
     <!-- load carousel script after attaching event listeners, otherwise the initial event is not caught. -->
     <script type="module" src="/src/main.ts"></script>
     <script>
       // Start at a slide different from the first.
-      const carouselContainer = document.querySelector(
-        '.demo4-container demo-carousel-container'
-      );
-      carouselContainer.gotoSlide(3);
+      // Need to wait for 'DOMContentLoaded' because the carousel script is loaded deferred.
+      window.addEventListener('DOMContentLoaded', function () {
+        console.log('DOMContentLoaded');
+        document.querySelector('.demo4-container carousel-container').gotoSlide(3);
+        document.querySelector('.demo5-container carousel-container').stop();
+      });
     </script>
     <script>
       // setTimeout(() => {
