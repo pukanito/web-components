@@ -497,3 +497,12 @@ Run `nx build carousel` to build the library.
 ## Running unit tests
 
 Run `nx test carousel` to execute the unit tests via [Jest](https://jestjs.io).
+
+## Publishing
+
+- update the version number in 'package.json' of 'carousel',
+- build the new version,
+- `cd` to the dist directory of carousel,
+- `npm adduser` to login in npm,
+- `npm publish --access=public` to publish the new version.
+
