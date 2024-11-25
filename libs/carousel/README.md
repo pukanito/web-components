@@ -30,7 +30,7 @@ receive the initial 'slid' event.
 
 ## Tags
 
-### <carousel-container>
+### &lt;carousel-container>
 
 The container for all other carousel elements.
 
@@ -127,7 +127,7 @@ changed by applying javascript just after loading the carousel sources:
   </script>
 ```
 
-### <carousel-slide>
+### &lt;carousel-slide>
 
 A slide containing content to show inside the carousel when it is active.
 
@@ -146,7 +146,7 @@ Elements inside slides can have the `slide-autofocus` attribute. When focus is i
 starts, the slide will loose focus because it becomes inert. In that case the first element
 inside the destination slide that has the `slide-autofocus` attribute will be focused when scrolling finishes.
 
-### <carousel-previous-button>
+### &lt;carousel-previous-button>
 
 An element with `role="button"` that scrolls to the previous slide when activated.
 When the first slide is active, it scrolls to the last slide.
@@ -165,7 +165,7 @@ carousel-previous-button {
 
 which places it, by default, at the left side of a `position: relative` parent container.
 
-### <carousel-next-button>
+### &lt;carousel-next-button>
 
 An element with `role="button"` that scrolls to the next slide when activated.
 When the last slide is active, it scrolls to the first slide.
@@ -184,7 +184,7 @@ carousel-previous-button {
 
 which places it, by default, at the right side of a `position: relative` parent container.
 
-### <carousel-autorotation-button>
+### &lt;carousel-autorotation-button>
 
 An element with `role="button"` that controls the autorotation state.
 When there is no `<carousel-autorotation-button>`, the carousel will not have autorotation functionality.
@@ -296,7 +296,7 @@ demo-carousel-autorotation-button {
 
 This will cause the button to have inner text depending on its state.
 
-### <carousel-progress> and <carousel-progress-item>
+### &lt;carousel-progress> and &lt;carousel-progress-item>
 
 Non interactive elements that show the position of the current slide related to all slides.
 `<carousel-progress>` is a container for one or more `<carousel-progress-item>`.
@@ -326,7 +326,7 @@ Normally there is a `<carousel-progress-item>` for each slide.
 
 See examples for more information and how to use the states.
 
-### <carousel-picker> and <carousel-picker-button>
+### &lt;carousel-picker> and &lt;carousel-picker-button>
 
 Container and buttons to select a specific slide using buttons.
 `<carousel-picker>` is a container for one or more `<carousel-picker-button>`.
@@ -356,7 +356,7 @@ Normally there is a `<carousel-picker-button>` for each slide.
 
 See examples for more information and how to use the states.
 
-### <carousel-tabs> and <carousel-tab>
+### &lt;carousel-tabs> and &lt;carousel-tab>
 
 Container and tabs to select a specific slide using a tabs pattern.
 `<carousel-tabs>` is a container for one or more `<carousel-tab>`.
@@ -382,7 +382,7 @@ tab gets a `aria-controls="<id of the slide>"`.
 When a tab is active, it gets `aria-selected="true"` and `tabindex="0"`. All
 inactive tabs have `aria-selected="false"` and `tabindex="-1"`.
 
-### <carousel-button>
+### &lt;carousel-button>
 
 A button that can be placed anywhere inside a carousel container and when activated will scroll to
 a specific slide.
