@@ -199,6 +199,7 @@ class CarouselContainerElement extends CarouselElement {
     currentSlideNumber: 0,
     closestSlideNumber: 0,
     setNewSlideFocus: false,
+    lastSlidSlideNumber: 0,
   };
   // Used in scrollEventListener to keep track of the currently closest slide.
   private closestSlideNumber: number = -1;
