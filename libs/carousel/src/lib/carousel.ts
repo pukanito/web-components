@@ -133,6 +133,8 @@ interface CarouselState {
   currentSlideNumber: number;
   closestSlideNumber: number;
   setNewSlideFocus: boolean;
+  // Number of the slide that caused the last slid event. To prevent double 'slid' events.
+  lastSlidSlideNumber: number;
 }
 
 // noinspection JSUnusedGlobalSymbols — export for user usage.
@@ -443,6 +445,7 @@ class CarouselContainerElement extends CarouselElement {
     const from = this.carouselState.currentSlideNumber;
     this.carouselState.currentSlideNumber = slideNumber;
     this.carouselState.closestSlideNumber = slideNumber;
+    this.carouselState.lastSlidSlideNumber = slideNumber;
     this.carouselState.gotoSlideNumber = 0;
     this.carouselViewport.scrollTo({
       left: this.carouselState.slidesScrollX[slideNumber - 1],
@@ -544,8 +547,13 @@ class CarouselContainerElement extends CarouselElement {
       this.closestSlideNumber = this.getClosestSlideNumber();
     }
     const currentSlide = this.getCurrentSlideNumber();
-    // Check if scrolling is finished: it is the destination, or there is no destination.
-    if (currentSlide !== 0 && [currentSlide, 0].includes(this.carouselState.slideToNumber)) {
+    // Check if scrolling is finished: it is the destination, or there is no destination,
+    // and the 'slid' event for this slide has not yet been sent.
+    if (
+      currentSlide !== 0 &&
+      [currentSlide, 0].includes(this.carouselState.slideToNumber) &&
+      currentSlide !== this.carouselState.lastSlidSlideNumber
+    ) {
       // Prepare the parameter for 'slid' event.
       const slidEventDetail = {
         from: this.carouselState.slideFromNumber,
@@ -555,6 +563,7 @@ class CarouselContainerElement extends CarouselElement {
       this.carouselState.currentSlideNumber = currentSlide;
       this.carouselState.slideFromNumber = 0;
       this.carouselState.slideToNumber = 0;
+      this.carouselState.lastSlidSlideNumber = currentSlide;
       this.internals.states.clear();
       this.internals.states.add(`slide-${currentSlide}`);
       if (currentSlide === 1) this.internals.states.add('first');
@@ -643,7 +652,7 @@ class CarouselContainerElement extends CarouselElement {
   private getCurrentSlideNumber(): number {
     return (
       this.carouselState.slidesScrollX.findIndex((x: any) => {
-        return Math.abs(this.carouselViewport.scrollLeft - x) < 1;
+        return Math.abs(this.carouselViewport.scrollLeft - x) < 2;
       }) + 1
     );
   }

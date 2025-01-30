@@ -48,7 +48,7 @@ The carousel container handles pointer and focus events on the carousel.
 
 The carousel container adds the 'inert' attribute to all slides that are not the current slide.
 This causes all interaction with the hidden slides to be stopped and only the active slide
-has interaction. Be aware that inert slides and contents cannot be reference by `aria-labelledby`!
+has interaction. Be aware that inert slides and contents cannot be referenced by `aria-labelledby`!
 
 The carousel container has states depending on which slide is the current.
 This state can be used in CSS with the ':state' pseudo-class:
@@ -99,8 +99,8 @@ By default, other carousel elements use the following slot (when they are a dire
 |----------------------|-------------------------------------------------------------------|
 | &lt;default slot&gt; | all other child elements                                          |
 | previous             | `<carousel-previous-button>`                                      |
-| rotation             | `<carousel-next-button>`                                          |
-| next                 | `<carousel-autorotation-button>`                                  |
+| rotation             | `<carousel-autorotation-button>`                                  |
+| next                 | `<carousel-next-button>`                                          |
 | before-viewport      |                                                                   |
 | slides               | `<carousel-slide>`                                                |
 | after-viewport       |                                                                   |
